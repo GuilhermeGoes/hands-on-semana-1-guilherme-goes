@@ -38,6 +38,8 @@ public final class Utils {
 
         } catch (ParseException e) {
 
+        } catch (Exception e) {
+            LOGGER.severe(String.format("Valor não corresponde com o tipo => %s", value));
         }
 
         return 0.0;

@@ -19,7 +19,7 @@ public final class FileUtils {
 
             while(line != null) {
                 var invoice = new Invoice();
-                String[] invoiceInfo = line.split(";");
+                String[] invoiceInfo = line.split(";", 9);
 
                 invoice.setCompany(invoiceInfo[0]);
                 invoice.setMonth(invoiceInfo[1]);
@@ -55,7 +55,7 @@ public final class FileUtils {
 
             while(line != null) {
                 var receipt = new Receipt();
-                String[] receiptInfo = line.split(";");
+                String[] receiptInfo = line.split(";", 6);
 
                 receipt.setCompany(receiptInfo[0]);
                 receipt.setMonth(receiptInfo[1]);

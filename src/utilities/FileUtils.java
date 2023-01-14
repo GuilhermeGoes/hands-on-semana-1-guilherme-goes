@@ -1,6 +1,7 @@
 package utilities;
 
 import model.Invoice;
+import model.Receipt;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -41,6 +42,39 @@ public final class FileUtils {
         reader.close();
 
         return invoiceList;
+    }
+
+    public static ArrayList<Receipt> readReceiptFile(String filename) throws IOException {
+        var receiptList = new ArrayList<Receipt>();
+
+        BufferedReader reader = new BufferedReader(new FileReader(String.format("%s/%s.txt", "resources", filename)));
+        reader.readLine();
+
+        try {
+            String line = reader.readLine();
+
+            while(line != null) {
+                var receipt = new Receipt();
+                String[] receiptInfo = line.split(";");
+
+                receipt.setCompany(receiptInfo[0]);
+                receipt.setMonth(receiptInfo[1]);
+                receipt.setYear(receiptInfo[2]);
+                receipt.setValue(receiptInfo[3]);
+                receipt.setIssueDate(receiptInfo[4]);
+                receipt.setBill(receiptInfo[5]);
+
+                receiptList.add(receipt);
+                line = reader.readLine();
+            }
+
+        } catch(IOException e) {
+
+        }
+
+        reader.close();
+
+        return receiptList;
     }
 
     public void writeFile(String filename) throws IOException {

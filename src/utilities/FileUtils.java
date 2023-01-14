@@ -25,11 +25,11 @@ public final class FileUtils {
                 invoice.setMonth(invoiceInfo[1]);
                 invoice.setYear(invoiceInfo[2]);
                 invoice.setFirstInstallmentDate(invoiceInfo[3]);
-                invoice.setFirstInstallmente(invoiceInfo[4]);
+                invoice.setFirstInstallment(invoiceInfo[4]);
                 invoice.setSecondInstallmentDate(invoiceInfo[5]);
-                invoice.setSecondInstallmente(invoiceInfo[6]);
+                invoice.setSecondInstallment(invoiceInfo[6]);
                 invoice.setThirdInstallmentDate(invoiceInfo[7]);
-                invoice.setThirdInstallmente(invoiceInfo[8]);
+                invoice.setThirdInstallment(invoiceInfo[8]);
 
                  invoiceList.add(invoice);
                 line = reader.readLine();

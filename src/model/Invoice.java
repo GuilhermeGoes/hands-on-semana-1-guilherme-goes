@@ -10,11 +10,11 @@ public class Invoice {
     private Integer month;
     private Integer year;
     private String firstInstallmentDate;
-    private Double firstInstallmente;
+    private Double firstInstallment;
     private String secondInstallmentDate;
-    private Double secondInstallmente;
+    private Double secondInstallment;
     private String thirdInstallmentDate;
-    private Double thirdInstallmente;
+    private Double thirdInstallment;
 
     public String getCompany() {
         return company;
@@ -48,12 +48,12 @@ public class Invoice {
         this.firstInstallmentDate = firstInstallmentDate;
     }
 
-    public Double getFirstInstallmente() {
-        return firstInstallmente;
+    public Double getFirstInstallment() {
+        return firstInstallment;
     }
 
-    public void setFirstInstallmente(String firstInstallmente) {
-        this.firstInstallmente = Utils.monetaryConvert(firstInstallmente);
+    public void setFirstInstallment(String firstInstallment) {
+        this.firstInstallment = Utils.monetaryConvert(firstInstallment);
     }
 
     public String getSecondInstallmentDate() {
@@ -64,12 +64,12 @@ public class Invoice {
         this.secondInstallmentDate = secondInstallmentDate;
     }
 
-    public Double getSecondInstallmente() {
-        return secondInstallmente;
+    public Double getSecondInstallment() {
+        return secondInstallment;
     }
 
-    public void setSecondInstallmente(String secondInstallmente) {
-        this.secondInstallmente = Utils.monetaryConvert(secondInstallmente);
+    public void setSecondInstallment(String secondInstallment) {
+        this.secondInstallment = Utils.monetaryConvert(secondInstallment);
     }
 
     public String getThirdInstallmentDate() {
@@ -80,12 +80,12 @@ public class Invoice {
         this.thirdInstallmentDate = thirdInstallmentDate;
     }
 
-    public Double getThirdInstallmente() {
-        return thirdInstallmente;
+    public Double getThirdInstallment() {
+        return thirdInstallment;
     }
 
-    public void setThirdInstallmente(String thirdInstallmente) {
-        this.thirdInstallmente = Utils.monetaryConvert(thirdInstallmente);
+    public void setThirdInstallment(String thirdInstallment) {
+        this.thirdInstallment = Utils.monetaryConvert(thirdInstallment);
     }
 
     @Override

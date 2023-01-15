@@ -32,7 +32,7 @@ public class BillingReport {
 
     @Override
     public String toString() {
-        return "{\"invoice\": {" +
+        return "{\"BillingReport\": {" +
                 "\"invoiceTotalValue\": " + this.getInvoiceTotalValue() +
                 "}}";
     }

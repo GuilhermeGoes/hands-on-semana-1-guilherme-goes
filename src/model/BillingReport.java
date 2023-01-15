@@ -33,7 +33,9 @@ public class BillingReport {
     @Override
     public String toString() {
         return "{\"BillingReport\": {" +
-                "\"invoiceTotalValue\": " + this.getInvoiceTotalValue() +
-                "}}";
+                "\"company\": \"" + this.getCompany() + "\", " +
+                "\"invoiceTotalValue\": " + this.getInvoiceTotalValue() + ", " +
+                "\"receiptTotalValue\": " + this.getReceiptTotalValue() +
+                "}},\n";
     }
 }

@@ -2,8 +2,6 @@ package model;
 
 import utilities.Utils;
 
-import java.text.ParseException;
-
 public class Invoice {
 
     private String company;
@@ -88,10 +86,17 @@ public class Invoice {
         this.thirdInstallment = Utils.monetaryConvert(thirdInstallment);
     }
 
+    public Double getTotalInstallment() {
+        return this.firstInstallment + this.secondInstallment + this.thirdInstallment;
+    }
+
     @Override
     public String toString() {
-        return "\"invoice\": {" +
-                "\"company\": " + this.company +
-                "}";
+        return "{\"invoice\": {" +
+                "\"company\": \"" + this.company + "\", " +
+                "\"month\": " + this.month + ", " +
+                "\"year\": " + this.year + ", " +
+                "\"TotalInstallment\": " + this.getTotalInstallment() +
+                "}}";
     }
 }

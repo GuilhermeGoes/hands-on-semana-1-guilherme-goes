@@ -5,8 +5,11 @@ import model.Receipt;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 public final class FileUtils {
+
+    private static final Logger LOGGER = Logger.getLogger(FileUtils.class.getName());
 
     public static ArrayList<Invoice> readInvoiceFile(String filename) throws IOException {
         var invoiceList = new ArrayList<Invoice>();
@@ -36,7 +39,7 @@ public final class FileUtils {
             }
 
         } catch(IOException e) {
-
+            LOGGER.severe("ERRO NA LEITURA DE ARQUIVO");
         }
 
         reader.close();
@@ -69,12 +72,19 @@ public final class FileUtils {
             }
 
         } catch(IOException e) {
-
+            LOGGER.severe("ERRO NA LEITURA DE ARQUIVO");
         }
 
         reader.close();
-
         return receiptList;
+    }
+
+    public static void writeConformitiesReport() {
+
+    }
+
+    public static void writeNonConformitiesReport() {
+
     }
 
     public void writeFile(String filename) throws IOException {

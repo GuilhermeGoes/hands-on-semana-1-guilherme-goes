@@ -1,10 +1,12 @@
 package utilities;
 
+import model.BillingReport;
 import model.Invoice;
 import model.Receipt;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 public final class FileUtils {
@@ -79,16 +81,20 @@ public final class FileUtils {
         return receiptList;
     }
 
-    public static void writeConformitiesReport() {
+    public static void writeFile(String filename, List<BillingReport> report) throws IOException {
+        BufferedWriter writer = new BufferedWriter(
+                new FileWriter(String.format("%s/%s.json", "resources", filename))
+        );
 
-    }
-
-    public static void writeNonConformitiesReport() {
-
-    }
-
-    public void writeFile(String filename) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
+        report.forEach(
+                line -> {
+                    try {
+                        writer.append(line.toString());
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+        );
 
         writer.close();
     }
